@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_DIR">${bundle:application:log4j2FilePath}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%d{dd-MM-yyyy HH:mm:ss}] [%-5p] [%X{processID}] [%c{1}] - %m%n" />
+        </Console>
+        <RollingFile name="LogToFile"
+                     fileName="${LOG_DIR}/oasys.log"
+                     filePattern="${LOG_DIR}/oasys.%d{dd-MM-yyyy}.log"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>[%d{dd-MM-yyyy HH:mm:ss}] [%-5p] [%X{processID}] [%c{1}] - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" />
+            </Policies>
+            <DefaultRolloverStrategy max="7" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.jagoit" level="debug" additivity="false">
+            <AppenderRef ref="LogToFile"/>
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+        <Logger name="org.springframework.boot" level="error" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFile"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="LogToFile"/>
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>

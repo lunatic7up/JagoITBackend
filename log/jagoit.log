@@ -1,0 +1,5 @@
+[19-04-2023 23:20:53] [INFO] [] [c.j.J.JagoItBeApplication] - Starting JagoItBeApplication using Java 17.0.5 on Dodo with PID 9176 (C:\Users\ronal\Desktop\Jago-IT-BE\target\classes started by ronal in C:\Users\ronal\Desktop\Jago-IT-BE)
+[19-04-2023 23:20:53] [DEBUG] [] [c.j.J.JagoItBeApplication] - Running with Spring Boot v2.5.3, Spring v5.3.9
+[19-04-2023 23:20:53] [INFO] [] [c.j.J.JagoItBeApplication] - No active profile set, falling back to default profiles: default
+[19-04-2023 23:20:54] [INFO] [] [c.j.J.h.SimpleCorsFilter] - SimpleCORSFilter init
+[19-04-2023 23:20:56] [INFO] [] [c.j.J.JagoItBeApplication] - Started JagoItBeApplication in 2.878 seconds (JVM running for 3.389)
